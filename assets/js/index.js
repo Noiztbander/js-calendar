@@ -1,7 +1,7 @@
 //Cogemos la fecha de hoy
 const date = new Date();
 
-const renderCalendar = () =>{
+const renderCalendar = () => {
 
     date.setDate(1);
 
@@ -78,3 +78,4 @@ var btnPrev = document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
+//fdsfdsdfsdfdesfsdf
