@@ -19,7 +19,7 @@ const renderCalendar = () => {
 
     //Siempre se aumenta 1, puesto que la variable empieza a contar desde 0
     const months = [
-        "Enero",
+        "EnEro",
         "Febrero",
         "Marzo",
         "Abril",
