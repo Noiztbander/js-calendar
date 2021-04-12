@@ -55,11 +55,7 @@ const renderCalendar = () => {
     //Add div event classs
     for (let i = 1; i <= lastDay; i++) {
         if (i === new Date().getDate() && date.getMonth() === new Date().getMonth() && date.getFullYear() === new Date().getFullYear()) {
-            days += `<div class="today">${i}</div>`;
-
-            //Event
-            // } else if (myEvent === true) {
-            //     days += `<div class="event">${i}</div>`;
+            days += `<div class="today" id=day-${i}>${i}</div>`;
         } else {
             days += `<div class="no-event-day" id=day-${i}>${i}</div>`;
         }
@@ -88,35 +84,44 @@ renderCalendar();
 
 //New code here
 
-//En la línea de arriba cuando haces el queryselectorall debes gaurdar la colección de divs
+//HOY
+//ls
+today = document.getElementsByClassName("today");
+//console.log(today)
+//today = today.addEventListener("click", showEventOfDayHere);
+
+//Otros dias
 day = document.querySelectorAll('.no-event-day');
 for (let d = 0; d < day.length; d++) {
     day.item(d).addEventListener("click", showEventOfDayHere);
 }
 
-
-var meeting = false;
+//Falta incluir today
+var meeting = true;
 var study = false;
-var personal = true;
+var personal = false;
 
 function showEventOfDayHere(ev) {
     if (meeting == true) {
-        event.target.innerHTML = "Meeting"
+        //event.target.innerHTML = "Meeting"
+        event.target.insertAdjacentHTML('beforeend', '<div class="event-inserted"><ul class="meetingList">M</ul></div>');
         event.stopPropagation();
 
         //Si no existe evento, crear uno nuevo con estilo A
     } else if (study == true) {
-        event.target.innerHTML = "Study"
+        //event.target.innerHTML = "Study"
+        event.target.insertAdjacentHTML('beforeend', '<div class="event-inserted"><ul class="studyList">S</ul></div>');
         event.stopPropagation();
         //Si ya existe un evento, insertarlo debajo del evento anterior con estilo B
         //Alarma - 
     } else if (personal == true) {
-        event.target.innerHTML = "Personal"
+        //event.target.innerHTML = "Personal"
+        event.target.insertAdjacentHTML('beforeend', '<div class="event-inserted"><ul class="personalList">P</ul></div>');
         event.stopPropagation();
         //Si ya existe un evento, insertarlo debajo del evento anterior con estilo B
         //Alarma - 
     } else {
-        day.innerHTML = "else esle esl";
+        //Unicamente ver todos los eventos de un dia si se clica encima
     }
 
 }

@@ -9,11 +9,11 @@ html {
     font-size: 62.5%;
 }
 
-body{
+body {
     background-color: rgb(201, 201, 201);
 }
 
-main{
+main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2%;
@@ -22,9 +22,11 @@ main{
     padding: 1%;
 }
 
+
 /* *********************************
 ---------- CALENDARIO --------------
 ********************************* */
+
 .container_calendar {
     height: 100%;
     width: 100%;
@@ -151,21 +153,23 @@ main{
     background-color: orange;
 }
 
+
 /* *********************************
 -------------- EVENTS --------------
 ********************************* */
-.events{
-    display:flex;
+
+.events {
+    display: flex;
     outline: darkgoldenrod solid 2px;
     flex-direction: column;
     align-items: center;
     padding: 10px;
     overflow-y: scroll;
     margin-left: 40px;
-    order:2;
+    order: 2;
 }
 
-.event__display{
+.event__display {
     min-height: 100px;
     width: 100%;
     height: fit-content;
@@ -174,29 +178,38 @@ main{
 
 
 /* ########## Pop up Modal ####### */
-#openButton{
+
+#openButton {
     height: 50px;
-     width: 50px ;
-     background-color:white;
-     font-size: 30px;
-     position: absolute;
-     bottom:20%;
-     left: 80%;
+    width: 50px;
+    background-color: white;
+    font-size: 30px;
+    position: absolute;
+    bottom: 20%;
+    left: 80%;
 }
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 600; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 600;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(35, 54, 54, 0.4); /* Black w/ opacity */
-    
-    
-  }
-  /* Add styles to the modal container */
-  .modal-content {
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    background-color: rgba(35, 54, 54, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Add styles to the modal container */
+
+.modal-content {
     flex-direction: column;
     background-color: white;
     margin: auto;
@@ -208,69 +221,90 @@ main{
     padding: 25px;
     box-shadow: 10px 10px 10px black;
     font-size: 12px;
-    
-  }
-  
-  .textContainer , #addDate , #addTitle ,#endDate, #timeSelect, #reminderBox, #descriptionBox,#eventType, #buttonsPop{
-     height: 50px;
-     width: 100%;
-     /* outline: 1px black solid; */
-  }
-  /* Space beetweeen the Create and Close buttons */
-  #buttonsPop{
+}
+
+.textContainer,
+#addDate,
+#addTitle,
+#endDate,
+#timeSelect,
+#reminderBox,
+#descriptionBox,
+#eventType,
+#buttonsPop {
+    height: 50px;
+    width: 100%;
+    /* outline: 1px black solid; */
+}
+
+
+/* Space beetweeen the Create and Close buttons */
+
+#buttonsPop {
     display: flex;
     justify-content: space-between;
-  }
-  /* Move around the H1 text  */
-  .textContainer{
-      display: flex;
-      align-items: center;
-      
-  }
-  /* Size and focus of the Add title Box  */
-#titleBox{
+}
+
+
+/* Move around the H1 text  */
+
+.textContainer {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Size and focus of the Add title Box  */
+
+#titleBox {
     height: 40px;
     width: 100%;
 }
+
 #titleBox:focus {
     background-color: #ddd;
 }
- /* Moving around of all the content inside the separate divs */
-#addDate{
+
+
+/* Moving around of all the content inside the separate divs */
+
+#addDate {
     display: flex;
     align-items: center;
-    flex-direction:row ;
+    flex-direction: row;
     justify-content: space-between;
-    
-}
-#endCal{
-    margin-left: 20%;
-    
 }
 
-#initialCal , #endCal{
-width: 80%;
-height: 70%;
+#endCal {
+    margin-left: 20%;
 }
-#endCal{
+
+#initialCal,
+#endCal {
+    width: 80%;
+    height: 70%;
+}
+
+#endCal {
     display: none;
 }
-#timeSelect{
+
+#timeSelect {
     display: flex;
     align-items: center;
 }
-#timeSelector{
-margin: 18px;
-width: 20%;
-height: 70%;
 
+#timeSelector {
+    margin: 18px;
+    width: 20%;
+    height: 70%;
 }
-#reminderSelect{
+
+#reminderSelect {
     display: none;
-  
 }
 
-textarea{
+textarea {
     resize: none;
     overflow: auto;
     outline: none;
@@ -278,21 +312,24 @@ textarea{
     padding: 2px;
     height: 100%;
     width: 100%;
-    
 }
-#eventType{
+
+#eventType {
     margin-top: 10px;
 }
-#eventSelect{
-  margin-left: 18px;
 
-   
+#eventSelect {
+    margin-left: 18px;
 }
-#reminderBox{
-  padding: 15px 0 15px 0
+
+#reminderBox {
+    padding: 15px 0 15px 0
 }
+
+
 /* All Modal Buttons side and shape */
-.buttons{
+
+.buttons {
     height: 50px;
     width: 70px;
     border-radius: 10%;
@@ -304,15 +341,53 @@ textarea{
     cursor: pointer;
 }
 
-#cancelBtn{
+#cancelBtn {
     background-color: lightcoral;
     cursor: pointer;
 }
+
+
 /* The Close Button */
+
 .close {
     color: #aaaaaa;
     float: left;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-  }
+}
+
+
+/* EINAR */
+
+.event-inserted {
+    border-radius: 25%;
+    width: 100%;
+    height: 50px;
+    margin: 0px 0px 100px 50px;
+    overflow: hidden;
+}
+
+.meetingList {
+    align-items: initial;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(38, 54, 199);
+    font-size: 1 rem;
+}
+
+.studyList {
+    align-items: initial;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(175, 33, 33);
+    font-size: 1 rem;
+}
+
+.personalList {
+    align-items: initial;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(30, 114, 27);
+    font-size: 1 rem;
+}
