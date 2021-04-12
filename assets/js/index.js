@@ -48,6 +48,7 @@ const renderCalendar = () => {
         days += `<div class = "prev-date">${prevLastDay - x+1}</div>`;
     }
 
+    //Crear una clase especifica para el dia seleccionado
     for (let i = 1; i <= lastDay; i++) {
         if (i === new Date().getDate() && date.getMonth() === new Date().getMonth() && date.getFullYear() === new Date().getFullYear()) {
             days += `<div class="today">${i}</div>`;
@@ -77,5 +78,3 @@ var btnPrev = document.querySelector(".next").addEventListener("click", () => {
 
 
 renderCalendar();
-
-//fdsfdsdfsdfdesfsdf
