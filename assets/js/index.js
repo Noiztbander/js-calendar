@@ -93,20 +93,41 @@ day = document.querySelectorAll('.no-event-day');
 for (let d = 0; d < day.length; d++) {
     day.item(d).addEventListener("click", showEventOfDayHere);
 }
-var insertString = 1;
 
-function showEventOfDayHere() {
-    console.log("into this function");
-    if (insertString == 1) {
-        day.item(5).innerText = "one";
-        //day.innerText = "one";
+
+var meeting = false;
+var study = false;
+var personal = true;
+
+function showEventOfDayHere(ev) {
+    if (meeting == true) {
+        event.target.innerHTML = "Meeting"
+        event.stopPropagation();
+
         //Si no existe evento, crear uno nuevo con estilo A
-    } else if (insertString == 2) {
-        day.innerHTML = "two";
+    } else if (study == true) {
+        event.target.innerHTML = "Study"
+        event.stopPropagation();
+        //Si ya existe un evento, insertarlo debajo del evento anterior con estilo B
+        //Alarma - 
+    } else if (personal == true) {
+        event.target.innerHTML = "Personal"
+        event.stopPropagation();
         //Si ya existe un evento, insertarlo debajo del evento anterior con estilo B
         //Alarma - 
     } else {
         day.innerHTML = "else esle esl";
     }
+
+}
+
+stopEvent = true;
+
+function load() {
+    elem = document.getElementById("all-days");
+    elem.addEventListener("click", stopEvent, false);
+    //var meeting = false;
+    //var study = false;
+    //var personal = salse;
 
 }
