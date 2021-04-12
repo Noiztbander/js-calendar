@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>JS-CALENDAR</title>
+    <title>JS-CALENDAR</title>
 
     <!---------------- LINKS ---------------->
     <link rel="stylesheet" href="assets/style/style.css">
@@ -24,96 +24,112 @@
             <div class="container_calendar">
                 <div class="calendar">
                     <div class="month">
-                      <i class="fas fa-arrow-left prev"></i>
-                      <div class="date">
-                        <h2></h2>
-                        <p></p>
-                      </div>
-                      <i class="fas fa-arrow-right next"></i>
+                        <i class="fas fa-arrow-left prev"></i>
+                        <div class="date">
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                        <i class="fas fa-arrow-right next"></i>
                     </div>
                     <div class="weekdays">
-                      <div>Dom</div>
-                      <div>Lun</div>
-                      <div>Mar</div>
-                      <div>Mie</div>
-                      <div>Jue</div>
-                      <div>Vie</div>
-                      <div>Sab</div>
+                        <div>Dom</div>
+                        <div>Lun</div>
+                        <div>Mar</div>
+                        <div>Mie</div>
+                        <div>Jue</div>
+                        <div>Vie</div>
+                        <div>Sab</div>
                     </div>
-                    <div class="days">
+                    <div class="days" id="all-days">
                     </div>
                 </div>
-								<div class="calendar__shadow"></div>
-								<div class="calendar__shadow__2"></div>
+                <div class="calendar__shadow"></div>
+                <div class="calendar__shadow__2"></div>
             </div>
             <div class="events">
-              <section class="event__display"><h1>Day of the event (Monday)</h1></section>
-              <section class="event__display"><h1>Day of the event (Monday)</h1></section>
-              <section class="event__display"><h1>Day of the event (Monday)</h1></section>
-              <section class="event__display"><h1>Day of the event (Monday)</h1></section>
-              <section class="event__display"><h1>Day of the event (Monday)</h1></section>
-              <section class="event__display"><h1>Day of the event (Monday)</h1></section>
-              <section class="event__display"><h1>Day of the event (Monday)</h1></section>
-              <section class="event__display"><h1>Day of the event (Monday)</h1></section>
+                <section class="event__display">
+                    <h1>Day of the event (Monday)</h1>
+                </section>
+                <section class="event__display">
+                    <h1>Day of the event (Monday)</h1>
+                </section>
+                <section class="event__display">
+                    <h1>Day of the event (Monday)</h1>
+                </section>
+                <section class="event__display">
+                    <h1>Day of the event (Monday)</h1>
+                </section>
+                <section class="event__display">
+                    <h1>Day of the event (Monday)</h1>
+                </section>
+                <section class="event__display">
+                    <h1>Day of the event (Monday)</h1>
+                </section>
+                <section class="event__display">
+                    <h1>Day of the event (Monday)</h1>
+                </section>
+                <section class="event__display">
+                    <h1>Day of the event (Monday)</h1>
+                </section>
             </div>
         </main>
         <!---------------- INICIO ASIDE ---------------->
         <aside>
             <button id="openButton">+</button>
 
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-                <div class="textContainer">
-                    <h1>New Event</h1>
-                </div>
-                <div id="addTitle">
-                  <label for="title"></label>
-                  <input id="titleBox" type="text" placeholder="Add title" name="Add title" maxlength="60" >
-                </div>
-                <div id="addDate">
-                  <label id="initialText" for="">Initial date:</label>
-                  <input id="initialCal" type="date"></input> 
-                </div>
-                <div id="endDate">
-                  <input id="checkboxEnd"  type="checkbox" onclick="displayEnd ()">End date</input> 
-                  <input id="endCal" type="date"></input> 
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="textContainer">
+                        <h1>New Event</h1>
+                    </div>
+                    <div id="addTitle">
+                        <label for="title"></label>
+                        <input id="titleBox" type="text" placeholder="Add title" name="Add title" maxlength="60">
+                    </div>
+                    <div id="addDate">
+                        <label id="initialText" for="">Initial date:</label>
+                        <input id="initialCal" type="date"></input>
+                    </div>
+                    <div id="endDate">
+                        <input id="checkboxEnd" type="checkbox" onclick="displayEnd ()">End date</input>
+                        <input id="endCal" type="date"></input>
 
-                </div>
-                <div id="timeSelect">
-                  <label for="">Initial Time:</label> 
-                  <input id="timeSelector" type="time"  name="" > 
-                </div>
-                <div id="reminderBox">
-                  <input id="reminderCheckBox"  type="checkbox" onclick="reminderShowTextArea()">Remind me when this event expires
-                  <select id="reminderSelect">
+                    </div>
+                    <div id="timeSelect">
+                        <label for="">Initial Time:</label>
+                        <input id="timeSelector" type="time" name="">
+                    </div>
+                    <div id="reminderBox">
+                        <input id="reminderCheckBox" type="checkbox" onclick="reminderShowTextArea()">Remind me when this event expires
+                        <select id="reminderSelect">
                     <option value="timeBefore">5 minutes before</option>
                     <option value="timeBefore">10 minutes before</option>
                     <option value="timeBefore">15 minutes before</option>
                     <option value="timeBefore">30 minutes before</option>
                     <option value="timeBefore">1 hour before</option>
                 </select> </input>
-                </div>
-                <div id="descriptionBox">
-                  <textarea maxlength="500" rows="3" cols="52"  placeholder="Add a description..."></textarea>
-                </div>
-               
-                <div id="eventType">
-                    <label for="events"> Event type:</label>
-                  <select id="eventSelect">
+                    </div>
+                    <div id="descriptionBox">
+                        <textarea maxlength="500" rows="3" cols="52" placeholder="Add a description..."></textarea>
+                    </div>
+
+                    <div id="eventType">
+                        <label for="events"> Event type:</label>
+                        <select id="eventSelect">
                       <option value="meeting">Meeting</option>
                       <option value="reminder">Personal</option>
                       <option value="reminder">Study</option>
-                  </select> 
+                  </select>
+                    </div>
+
+                    <div id="buttonsPop">
+                        <div><button id="createBtn" type="submit" class="buttons">Create</button></div>
+                        <div><button id="cancelBtn" type="button" class="buttons" onclick="closeForm()">Cancel</button></div>
+                    </div>
+
                 </div>
-                
-                <div id="buttonsPop">
-                  <div><button id="createBtn" type="submit" class="buttons">Create</button></div>
-                  <div><button id="cancelBtn" type="button" class="buttons" onclick="closeForm()">Cancel</button></div>
-                </div>
-               
             </div>
-        </div>
         </aside>
         <!---------------- INICIO FOOTER ---------------->
         <footer></footer>

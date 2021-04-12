@@ -1,7 +1,7 @@
 //Cogemos la fecha de hoy
 const date = new Date();
 
-const renderCalendar = () =>{
+const renderCalendar = () => {
 
     const monthDays = document.querySelector(".days")
 
@@ -14,6 +14,11 @@ const renderCalendar = () =>{
     const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
 
     const nextDays = 7 - lastDayIndex - 1;
+
+
+    //Normalmente todos los dias se ejecutan sin tener eventos, es el caso default de switch
+    // eventInCalendar =
+    //     default;
 
     //Siempre se aumenta 1, puesto que la variable empieza a contar desde 0
     const months = [
@@ -47,11 +52,16 @@ const renderCalendar = () =>{
         days += `<div class = "prev-date">${prevLastDay - x+1}</div>`;
     }
 
+    //Add div event classs
     for (let i = 1; i <= lastDay; i++) {
         if (i === new Date().getDate() && date.getMonth() === new Date().getMonth() && date.getFullYear() === new Date().getFullYear()) {
             days += `<div class="today">${i}</div>`;
+
+            //Event
+            // } else if (myEvent === true) {
+            //     days += `<div class="event">${i}</div>`;
         } else {
-            days += `<div>${i}</div>`;
+            days += `<div class="no-event-day" id=day-${i}>${i}</div>`;
         }
 
         monthDays.innerHTML = days;
@@ -76,3 +86,110 @@ var btnPrev = document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
+//New code here
+
+// switch (eventInCalendar) {
+//     case 1:
+//         //Solo los dias con 1 evento apareceran aqui
+//         [
+//             break;
+//         ]
+//     case 2:
+//         //Solo los dias con 2 evento apareceran aqui
+//         [
+//             break;
+//         ]
+//     case 3:
+//         //Solo los dias con 3 evento apareceran aqui
+//         [
+//             break;
+//         ]
+//     default:
+//         //Todos los dias SIN evento
+//         [
+//             //Solo ver informacion o formulario de inputs
+//             var noEventDay = document.getElementsByClassName("no-event-day");
+//             noEventDay.addEventListener("click", showEventOfDayHere);
+//             break;
+//         ]
+// }
+
+
+
+
+
+//todos los dias cogidos en una variable
+// var allDaysOfThisMonth = document.getElementById('all-days');
+// for (var i = 0; i < allDays.children.length; i++) {
+//     //console.log(allDays.children[i].allDays);
+// }
+// var event = 1;
+// var OneDayOfThisMonth = document.getElementById('all-days').getElementsByTagName("div").addEventListener("click", showEventOfDayHere);
+
+// function showEventOfDayHere() {
+//     var allDaysOfThisMonth = document.getElementById('all-days').addEventListener("click", showEventOfDayHere);
+//     //var OneDayOfThisMonth = allDaysOfThisMonth.getElementsByTagName("div");
+//     var OneDayOfThisMonth = document.getElementById('all-days').getElementsByTagName("div")
+//     var i;
+//     for (i = 0; i < OneDayOfThisMonth.length; i++) {
+//         OneDayOfThisMonth[i].style.backgroundColor = "red";
+//     }
+
+
+//     if (event == 1) {
+//         OneDayOfThisMonth.innerText = "two"
+//     } else if (event == 2) {
+
+//         OneDayOfThisMonth.innerHTML = "two"
+
+//     } else {
+
+//         OneDayOfThisMonth.innerHTML = ""
+
+//     }
+
+// }
+
+//Solo ataca a 1 dia
+var event = 1;
+var day = document.getElementById("day-3").addEventListener("click", showEventOfDayHere)
+
+function showEventOfDayHere() {
+    var day = document.getElementById("day-3")
+    if (event == 1) {
+        day.innerHTML = "one"
+    } else if (event == 2) {
+
+        day.innerHTML = "two"
+
+    } else {
+
+        day.innerHTML = ""
+
+    }
+
+}
+
+//Queremos que ataque a todos los dias, no detecta  getElementsByClassName
+var event = 1;
+var day = document.getElementsByClassName('no-event-day').addEventListener("click", showEventOfDayHere)
+
+//var testElements = document.getElementsByClassName('test');
+var testDivs = Array.prototype.filter.call(day, function(testElement) {
+    return testElement.nodeName === 'DIV';
+});
+
+
+function showEventOfDayHere() {
+    var day = document.getElementsByClassName('no-event-day')
+    if (event == 1) {
+        day.innerHTML = "one"
+    } else if (event == 2) {
+        day.innerHTML = "two"
+
+    } else {
+        day.innerHTML = "else esle esl"
+
+    }
+
+}
