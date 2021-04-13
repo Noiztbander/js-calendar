@@ -97,31 +97,39 @@ for (let d = 0; d < day.length; d++) {
 }
 
 //Falta incluir today
-var meeting = true;
+var hereMoreEvents = true;
+var meeting = false;
 var study = false;
 var personal = false;
 
 function showEventOfDayHere(ev) {
     if (meeting == true) {
-        //event.target.innerHTML = "Meeting"
         event.target.insertAdjacentHTML('beforeend', '<div class="event-inserted"><ul class="meetingList">M</ul></div>');
         event.stopPropagation();
-
-        //Si no existe evento, crear uno nuevo con estilo A
     } else if (study == true) {
-        //event.target.innerHTML = "Study"
         event.target.insertAdjacentHTML('beforeend', '<div class="event-inserted"><ul class="studyList">S</ul></div>');
         event.stopPropagation();
-        //Si ya existe un evento, insertarlo debajo del evento anterior con estilo B
-        //Alarma - 
     } else if (personal == true) {
-        //event.target.innerHTML = "Personal"
         event.target.insertAdjacentHTML('beforeend', '<div class="event-inserted"><ul class="personalList">P</ul></div>');
         event.stopPropagation();
-        //Si ya existe un evento, insertarlo debajo del evento anterior con estilo B
-        //Alarma - 
-    } else {
-        //Unicamente ver todos los eventos de un dia si se clica encima
+    } //else if (hereMoreEvents == true) {
+    //Unicamente ver todos los eventos de un dia si se clica encima
+    // document.body.click = addElement;
+    // document.currentDiv.click = addElement;
+
+    // function addElement() {
+    //     // crea un nuevo div
+    //     // y añade contenido
+    //     var newDiv = document.createElement("div");
+    //     var newContent = document.createTextNode("Hola!¿Qué tal?");
+    //     newDiv.appendChild(newContent); //añade texto al div creado.
+
+    //     // añade el elemento creado y su contenido al DOM
+    //     var currentDiv = document.getElementById("div1");
+    //     document.body.insertBefore(newDiv, currentDiv);
+    //}
+    else {
+        event.target.style.backgroundColor = "#ffa366";
     }
 
 }
