@@ -64,7 +64,6 @@ function closeForm() {
   inputTitleKey.value = '';
   inputDescriptionValue.value = '';
   
-
   inputTitleKey.classList.remove('error')
 }
 
@@ -97,8 +96,6 @@ function createEvent (){
   events.appendChild(section);
 }
 
-//This function saves the event in the local Stroage
-
 //This function saved the event in the local Stroage
 function saveEvent () {
   if (inputTitleKey.value) {
@@ -117,16 +114,7 @@ localStorage.setItem(inputDateValue.value , JSON.stringify(localStorageEvents));
   } else {
 inputTitleKey.classList.add('error');
   }
- 
 }
-// Hace falta repasar
-// function reLoad (){
-//   if(inputDateValue.value === inputDateValue.value ) {
-//     saveEvent()
-//   } else {
-//     location.reload
-//   }
-// }
 
 //Reminder Functions 
 //Set interval of diferents options
@@ -138,7 +126,7 @@ inputTitleKey.classList.add('error');
 // When the user clicks the button, open the modal
 openButton.onclick = function() {
   modal.style.display = "flex";
-}
+  }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -151,20 +139,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-/* *********************************/
-//---------- BUTTON FUNCTIONS ------/
-/**********************************/
-//funcion que envia el formulario y ademas nos crea el objeto
-// Saves event at the event output
-buttonSubmit.onclick = function () {
-
-  const supuestafecha = new Event(`${inputTitleKey.value}`,`${inputDateValue.value}`,`${inputDateEndValue.value}`,`${inputTimedValue.value}`,`${inputReminderValue.value}`,`${inputEventTypeValue.value}`,`${inputDescriptionValue.value}`);
-  //console.log(supuestafecha);
-
-  saveEvent()
-  closeForm();
-
-};
 
 /* *********************************
 ---------- EVENT FUNCTIONS --------
@@ -182,7 +156,6 @@ class Event {
   }
 }
 
-//
 Event.prototype.sentJSON = function (){
 
     // let miJSON = JSON.stringify(supuestafecha);
@@ -211,11 +184,11 @@ buttonSubmit.onclick = function () {
   const supuestafecha = new Event(`${inputTitleKey.value}`,`${inputDateValue.value}`,`${inputDateEndValue.value}`,`${inputTimedValue.value}`,`${inputReminderValue.value}`,`${inputEventTypeValue.value}`,`${inputDescriptionValue.value}`);
   console.log(supuestafecha);
   supuestafecha.sentJSON();
-  // buttonSubmit.addEventListener("click", createEvent);
-  createEvent();
   saveEvent();
+  createEvent();
   closeForm();
 };
+
 function getID(event){
 
   selectedDay = event.target.id;
@@ -284,17 +257,7 @@ function renderToday(){
     section.insertAdjacentHTML("afterbegin",`<h1>${element[1].title}</h1>`);
     events.appendChild(section);
   });
+}
   //console.log(today__event)
 
-
-//  if (key && value) {
-//  localStorage.setItem(key, value);
-// }
-
-// for (let i = 0; i < localStorage.length; i++) {
-//   let key = localStorage.key(i);
-//   let value = localStorage.getItem(key);
-// 
-
-}
 renderToday();

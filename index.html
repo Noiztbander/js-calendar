@@ -67,11 +67,11 @@
                 </div>
                 <div id="addTitle">
                   <label for="title"></label>
-                  <input id="titleBox" type="text" placeholder="Add title" name="Add title" maxlength="60" required>
+                  <input id="titleBox" type="text" placeholder="Add title" name="Add title" maxlength="60" required></input>
                 </div>
                 <div id="addDate">
                   <label id="initialText" for="">Initial date:</label>
-                  <input id="initialCal" type="date"></input>
+                  <input id="initialCal" type="date" required></input>
                 </div>
                 <div id="endDate">
                   <input id="checkboxEnd"  type="checkbox" onclick="displayEnd ()">End date</input>
@@ -80,7 +80,7 @@
                 </div>
                 <div id="timeSelect">
                   <label for="">Initial Time:</label>
-                  <input id="timeSelector" type="time"  name="" >
+                  <input id="timeSelector" type="time"  name="" required></input>
                 </div>
                 <div id="reminderBox">
                   <input id="reminderCheckBox"  type="checkbox" onclick="reminderShowSelectBox()">Remind me when this event expires
@@ -90,7 +90,7 @@
                     <option id="fiveTenMin" value="15 minutes before">15 minutes before</option>
                     <option id="threeTenMin" value="30 minutes before">30 minutes before</option>
                     <option id="oneHour" value="1 hour before">1 hour before</option>
-                </select> </input>
+                </select></input>
                 </div>
                 <div id="descriptionBox">
                   <textarea id="textAreaDescription" maxlength="500" rows="3" cols="52"  placeholder="Add a description..."></textarea>
